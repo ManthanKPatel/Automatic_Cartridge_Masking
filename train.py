@@ -59,7 +59,7 @@ roi_pooler = torchvision.ops.MultiScaleRoIAlign(featmap_names=['0'],
 
 # # put the pieces together inside a FasterRCNN model
 model = FasterRCNN(backbone,
-                   num_classes=5,  ### 2
+                   num_classes=5,
                    rpn_anchor_generator=anchor_generator,
                    box_roi_pool=roi_pooler)
 
@@ -184,7 +184,7 @@ def get_model_instance_segmentation(num_classes):
     # and replace the mask predictor with a new one
     model.roi_heads.mask_predictor = MaskRCNNPredictor(in_features_mask,
                                                        hidden_layer,
-                                                       num_classes)   #### 7
+                                                       num_classes)
     return model
 
 
