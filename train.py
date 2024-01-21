@@ -248,4 +248,3 @@ if __name__ == '__main__':
 	finalModel = train()
 	# Saving Model for future inference
 	torch.save(finalModel.state_dict(), "CartridgeMaskRCNN.pth")
-	# torch.save(finalModel, "CartridgeMaskRCNN_weights.pth")
