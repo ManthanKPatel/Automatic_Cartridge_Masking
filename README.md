@@ -100,14 +100,17 @@ To make testing process easy I have prepared a [colab notebook](https://drive.go
 * To run this colab notebook import all the required files mentioned in it and load it to the local session.
 * In colab notebook I have prepared visualisation functions to display predicted bounding box and segmentation mask data.
 
-Results:
+### Results:
 
-1. Sample test images
+#### 1. Sample test images
+   
 ![download (4)](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/95e9638f-216d-458f-b857-fd489d1eedfe)
 
-2. Bounding box over test images
+#### 2. Bounding box over test images
+   
 ![download (2)](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/ff5d581c-4c5f-4f01-b5d3-53cfaeddfb66)
 
-3. Segmentation masks and drag arrow display over the test images
+#### 3. Segmentation masks and drag arrow display over the test images
+   
 ![download (1)](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/c8225e33-748f-43e4-badc-e96e1bcae68d)
 
