@@ -94,7 +94,7 @@ IoU metric: segm
 
 ## Testing
 
-To make testing process easy I have prepared a ![colab notebook](https://drive.google.com/file/d/1rNj2jjm1xRfC6KFc1wh0fYplbAE5Z3wP/view?usp=sharing).
+To make testing process easy I have prepared a [colab notebook](https://drive.google.com/file/d/1rNj2jjm1xRfC6KFc1wh0fYplbAE5Z3wP/view?usp=sharing).
 
 * I have imported all required libraries in colab notebook and set up model in it.
 * To run this colab notebook import all the required files mentioned in it and load it to the local session.
