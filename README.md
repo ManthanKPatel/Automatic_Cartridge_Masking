@@ -36,7 +36,7 @@ Download dataset and organize the files as follows:
        ├── results    <-- 125 train data
        |   ├── images <-- for visualization
        |   └── results.json
-       └── references     <-- 7518 test data
+       └── references     <-- 125 test data
        |   ├── coco_evals.py 
        |   ├── coco_utils.py
        |   ├── engine.py
