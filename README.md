@@ -29,26 +29,25 @@ For this project I used open source data annotation tool Label Studio.  https://
 ![Screenshot 2024-01-21 225134](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/56b70599-d105-4b9b-8590-c8129369ca86)
 * Once data annotation is done, annotated images and annotations are exported as JSON file. For this project annotations were exported in COCO format.
 
-Download KITTI dataset and organize the files as follows:
+Download dataset and organize the files as follows:
 
 ```plain
-└── KITTI_DATASET_ROOT
-       ├── training    <-- 7481 train data
-       |   ├── image_2 <-- for visualization
-       |   ├── calib
+└── Segmentation
+       ├── results    <-- 125 train data
+       |   ├── images <-- for visualization
+       |   ├── results.json
        |   ├── label_2
        |   ├── velodyne
        |   └── velodyne_reduced <-- empty directory
-       └── testing     <-- 7518 test data
-       |   ├── image_2 <-- for visualization
-       |   ├── calib
-       |   ├── velodyne
-       |   └── velodyne_reduced <-- empty directory
-       └── kitti_dbinfos_train.pkl
-       ├── kitti_infos_train.pkl
-       ├── kitti_infos_test.pkl
-       ├── kitti_infos_val.pkl
-       └── kitti_infos_trainval.pkl
+       └── references     <-- 7518 test data
+       |   ├── coco_evals.py 
+       |   ├── coco_utils.py
+       |   ├── engine.py
+       |   ├── utils.py
+       |   └── transforms.py 
+       └── data
+       ├── aug_data.py
+       └── train.py
 ```
 ## Environment Setup
 
