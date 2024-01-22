@@ -49,7 +49,7 @@ Download dataset and organize the files as follows:
        ├── aug_data.py
        └── train.py
 ```
-## Environment Setup
+## Environment Setup and Training
 
 This code is based on Mask R-CNN of https://github.com/facebookresearch/maskrcnn-benchmark.
 
@@ -60,9 +60,6 @@ Required Packages: python 3.9, torch 2.1 (cuda), pycocotools, opencv.
 > When data augmentation is done and data folder is prepared run train.py fle to train the model which will save the trained model and run the model evaluations.
 
 > Trained model is stored here: https://drive.google.com/file/d/1YmZH0hATdZgQRhjWclVV3h0A8uVqlMzx/view?usp=drive_link
-
-
-### Training:
 
 
 ### Training Evaluation:
