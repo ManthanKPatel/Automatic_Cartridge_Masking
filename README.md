@@ -113,9 +113,10 @@ To make testing process easy I have prepared a [colab notebook](https://drive.go
 
 ## References
 
-1. [NIST Ballistics Toolmark Research Database](https://tsapps.nist.gov/NRBTD/Studies/Search)
-2. [VISUALIZATION UTILITIES](https://pytorch.org/vision/0.11/auto_examples/plot_visualization_utils.html)
-3. [Faster R-CNN for object detection](https://debuggercafe.com/custom-object-detection-using-pytorch-faster-rcnn/)
-4. [Automated detection of regions of interest in cartridge case images using deep learning](https://onlinelibrary.wiley.com/doi/full/10.1111/1556-4029.15319)
-5. [Image matching algorithms for breech face marks and firing pins in a database of spent cartridge cases of firearms](https://www.sciencedirect.com/science/article/pii/S0379073800004205)
-6. [Using GCP AutoML Vision to Predict Firearm Make/Model from Ballistic Images](https://medium.com/@dstepp2/using-gcp-automl-vision-to-predict-firearm-make-model-from-ballistic-images-55a7ca6086db)
+1. [Mask R-CNN](https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf)
+2. [NIST Ballistics Toolmark Research Database](https://tsapps.nist.gov/NRBTD/Studies/Search)
+3. [VISUALIZATION UTILITIES](https://pytorch.org/vision/0.11/auto_examples/plot_visualization_utils.html)
+4. [Faster R-CNN for object detection](https://debuggercafe.com/custom-object-detection-using-pytorch-faster-rcnn/)
+5. [Automated detection of regions of interest in cartridge case images using deep learning](https://onlinelibrary.wiley.com/doi/full/10.1111/1556-4029.15319)
+6. [Image matching algorithms for breech face marks and firing pins in a database of spent cartridge cases of firearms](https://www.sciencedirect.com/science/article/pii/S0379073800004205)
+7. [Using GCP AutoML Vision to Predict Firearm Make/Model from Ballistic Images](https://medium.com/@dstepp2/using-gcp-automl-vision-to-predict-firearm-make-model-from-ballistic-images-55a7ca6086db)
