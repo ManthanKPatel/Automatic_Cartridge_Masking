@@ -15,50 +15,62 @@ Mask R-CNN, or Mask Region-based Convolutional Neural Network, boasts a sophisti
 
 ## Dataset
 
-Recognizing the challenge of obtaining diverse and homogeneous cartridge images, I addressed this limitation by leveraging the NIST Ballistics Toolmark Research Database. This valuable resource provided a collection of microscopic images specifically focused on 9mm cartridges, offering a rich dataset for my project. By utilizing these images, I ensured a diverse representation of cartridge features, including the intricate details required for tasks like instance segmentation using Mask R-CNN. This strategic approach not only addressed the scarcity of relevant images but also enhanced the quality and diversity of the dataset, contributing to the robustness and effectiveness of the automatic masking solution developed in the project.
+Recognizing the challenge of obtaining diverse and homogeneous cartridge images, I addressed this limitation by leveraging the NIST Ballistics Toolmark Research Database. This valuable resource provided a collection of microscopic images specifically focused on 9mm cartridges, offering a rich dataset for my project. By utilizing these images, I ensured a diverse representation of cartridge features, including the intricate details required for tasks like instance segmentation using Mask R-CNN. This strategic approach not only addressed the scarcity of relevant images but also enhanced the quality and diversity of the dataset, contributing to the robustness and effectiveness of the automatic masking solution developed in the project. 
+
+NBTRD Dataset: https://tsapps.nist.gov/NRBTD/
+
+* Due to time limited constraint 125 train images were collected for this project and 11 test images.
 
 
 ### Data Labelling
 
-For this project I used 
+For this project I used open source data annotation tool Label Studio.  https://labelstud.io/
+![Screenshot 2024-01-21 225134](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/56b70599-d105-4b9b-8590-c8129369ca86)
+
+
+## 
 ## Environment Setup
-Tested on python3.6/3.7, pytorch 1.1.0/1.7.1, Ubuntu 16.04/18.04.
 
-## Performance on KITTI validation set (3712 training, 3769 validation)
-### CLOCs_SecCas (SECOND+Cascade-RCNN) VS SECOND:
+This code is based on Mask R-CNN of https://github.com/facebookresearch/maskrcnn-benchmark.
+
+Required Packages: python 3.9, torch 2.1 (cuda), pycocotools, opencv.
+
+> Once the required packages are installed, run aug_data.py with reults and data folder paths as input arguments.
+> When data augmentation is done and data folder is prepared run train.py fle to train the model which will save the trained model and run the model evaluations.
+
+### Training:
+
+
+### Training Evaluation:
 ```
-new 40 recall points
-Car:      Easy@0.7       Moderate@0.7   Hard@0.7
-bbox: AP: 99.33 / 97.87, 93.75 / 92.37, 92.89 / 89.87
-bev:  AP: 96.51 / 95.61, 92.37 / 89.54, 89.41 / 86.96
-3d:   AP: 92.74 / 90.97, 82.90 / 79.94, 77.75 / 77.09
-```
-```
-old 11 recall points
-Car:      Easy@0.7       Moderate@0.7   Hard@0.7
-bev:  AP: 90.52 / 90.36, 89.29 / 88.10, 87.84 / 86.80
-3d:   AP: 89.49 / 88.31, 79.31 / 77.99, 77.36 / 76.52
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.048
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.118
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.019
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.325
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.325
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.048
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.252
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.323
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.325
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.325
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.325
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.325
+IoU metric: segm
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.035
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.098
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.014
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.273
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.272
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.035
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.232
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.273
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.273
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.273
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.273
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.273
 ```
 
-### Pedestrian and Cyclist Results vs. SECOND:
-Using CLOCs_SecCas (SECOND+Cascade-RCNN) trained on KITTI validation set for Pedestrians/Cyclists
-```
-Pedestrian:    Easy@0.5     Moderate@0.5    Hard@0.5
-bbox:    AP:  74.57/58.26   70.81/54.14    62.51/50.03
-bev:     AP:  68.26/61.97   62.92/56.77    56.51/51.27
-3d:      AP:  62.88/58.01   56.20/51.88    50.10/47.05
-```
-```
-Cyclist:       Easy@0.5     Moderate@0.5    Hard@0.5
-bbox:    AP:  96.17/87.65   80.25/63.11    75.61/60.72
-bev:     AP:  91.42/81.91   71.52/59.36    67.05/55.53
-3d:      AP:  87.57/78.50   67.92/56.74    63.67/52.83
-```
-
-### To Do
- - [ ] Update the codebase to support other 3D detectors (PV-RCNN and CT3D)
- - [x] Support fusion for pedestrian and cyclists on KITTI.
- - [ ] Support easier testing for other 2D and 3D detectors, clean the code, remove unrelated environment setups to make the code easier to use.
 
 
 ## Install
@@ -77,28 +89,7 @@ export PYTHONPATH=$PYTHONPATH:'/dir/to/your/CLOCs/'
 ## Pre-trained Models
 Pretrained Models used for inference on Car, Pedestrian, and Cyclist detections can be found [here](https://drive.google.com/drive/folders/16Z9_c8VbZVsvrHczn67ZCeOHYx1x5VDj?usp=sharing).
 
-## Prepare dataset (KITTI)
-Download KITTI dataset and organize the files as follows:
 
-```plain
-└── KITTI_DATASET_ROOT
-       ├── training    <-- 7481 train data
-       |   ├── image_2 <-- for visualization
-       |   ├── calib
-       |   ├── label_2
-       |   ├── velodyne
-       |   └── velodyne_reduced <-- empty directory
-       └── testing     <-- 7518 test data
-       |   ├── image_2 <-- for visualization
-       |   ├── calib
-       |   ├── velodyne
-       |   └── velodyne_reduced <-- empty directory
-       └── kitti_dbinfos_train.pkl
-       ├── kitti_infos_train.pkl
-       ├── kitti_infos_test.pkl
-       ├── kitti_infos_val.pkl
-       └── kitti_infos_trainval.pkl
-```
 
 Next, you could follow the SECOND-1.5 instructions to create kitti infos, reduced point cloud and groundtruth-database infos, or just download these files from [here](https://drive.google.com/drive/folders/16Z9_c8VbZVsvrHczn67ZCeOHYx1x5VDj?usp=sharing) and put them in the correct directories as shown above.
 
