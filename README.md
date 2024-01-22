@@ -20,15 +20,36 @@ Recognizing the challenge of obtaining diverse and homogeneous cartridge images,
 NBTRD Dataset: https://tsapps.nist.gov/NRBTD/
 
 * Due to time limited constraint 125 train images were collected for this project and 11 test images.
+* Data is Stored in this folder: https://drive.google.com/drive/folders/18ThzTfi_Jp5C83nGlV2-GryTzDqzr42k?usp=drive_link
 
 
 ### Data Labelling
 
 For this project I used open source data annotation tool Label Studio.  https://labelstud.io/
 ![Screenshot 2024-01-21 225134](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/56b70599-d105-4b9b-8590-c8129369ca86)
+* Once data annotation is done, annotated images and annotations are exported as JSON file. For this project annotations were exported in COCO format.
 
+Download KITTI dataset and organize the files as follows:
 
-## 
+```plain
+└── KITTI_DATASET_ROOT
+       ├── training    <-- 7481 train data
+       |   ├── image_2 <-- for visualization
+       |   ├── calib
+       |   ├── label_2
+       |   ├── velodyne
+       |   └── velodyne_reduced <-- empty directory
+       └── testing     <-- 7518 test data
+       |   ├── image_2 <-- for visualization
+       |   ├── calib
+       |   ├── velodyne
+       |   └── velodyne_reduced <-- empty directory
+       └── kitti_dbinfos_train.pkl
+       ├── kitti_infos_train.pkl
+       ├── kitti_infos_test.pkl
+       ├── kitti_infos_val.pkl
+       └── kitti_infos_trainval.pkl
+```
 ## Environment Setup
 
 This code is based on Mask R-CNN of https://github.com/facebookresearch/maskrcnn-benchmark.
@@ -36,7 +57,11 @@ This code is based on Mask R-CNN of https://github.com/facebookresearch/maskrcnn
 Required Packages: python 3.9, torch 2.1 (cuda), pycocotools, opencv.
 
 > Once the required packages are installed, run aug_data.py with reults and data folder paths as input arguments.
+
 > When data augmentation is done and data folder is prepared run train.py fle to train the model which will save the trained model and run the model evaluations.
+
+> Trained model is stored here: https://drive.google.com/file/d/1YmZH0hATdZgQRhjWclVV3h0A8uVqlMzx/view?usp=drive_link
+
 
 ### Training:
 
