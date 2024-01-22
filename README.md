@@ -92,3 +92,22 @@ IoU metric: segm
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.273
 ```
 
+## Testing
+
+To make testing process easy I have prepared a ![colab notebook](https://drive.google.com/file/d/1rNj2jjm1xRfC6KFc1wh0fYplbAE5Z3wP/view?usp=sharing).
+
+* I have imported all required libraries in colab notebook and set up model in it.
+* To run this colab notebook import all the required files mentioned in it and load it to the local session.
+* In colab notebook I have prepared visualisation functions to display predicted bounding box and segmentation mask data.
+
+Results:
+
+1. Sample test images
+![download (4)](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/95e9638f-216d-458f-b857-fd489d1eedfe)
+
+2. Bounding box over test images
+![download (2)](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/ff5d581c-4c5f-4f01-b5d3-53cfaeddfb66)
+
+3. Segmentation masks and drag arrow display over the test images
+![download (1)](https://github.com/ManthanKPatel/Automatic_cartridge_masking/assets/90741568/c8225e33-748f-43e4-badc-e96e1bcae68d)
+
