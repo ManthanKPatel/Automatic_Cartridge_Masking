@@ -17,7 +17,7 @@ Mask R-CNN, or Mask Region-based Convolutional Neural Network, boasts a sophisti
 
 Recognizing the challenge of obtaining diverse and homogeneous cartridge images, I addressed this limitation by leveraging the NIST Ballistics Toolmark Research Database. This valuable resource provided a collection of microscopic images specifically focused on 9mm cartridges, offering a rich dataset for my project. By utilizing these images, I ensured a diverse representation of cartridge features, including the intricate details required for tasks like instance segmentation using Mask R-CNN. This strategic approach not only addressed the scarcity of relevant images but also enhanced the quality and diversity of the dataset, contributing to the robustness and effectiveness of the automatic masking solution developed in the project. 
 
-NBTRD Dataset: https://tsapps.nist.gov/NRBTD/
+NBTRD Dataset website: https://tsapps.nist.gov/NRBTD/
 
 * Due to time limited constraint 125 train images were collected for this project and 11 test images.
 * Data is Stored in this folder: https://drive.google.com/drive/folders/18ThzTfi_Jp5C83nGlV2-GryTzDqzr42k?usp=drive_link
