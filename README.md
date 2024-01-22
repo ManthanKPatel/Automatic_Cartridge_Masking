@@ -35,10 +35,7 @@ Download dataset and organize the files as follows:
 └── Segmentation
        ├── results    <-- 125 train data
        |   ├── images <-- for visualization
-       |   ├── results.json
-       |   ├── label_2
-       |   ├── velodyne
-       |   └── velodyne_reduced <-- empty directory
+       |   └── results.json
        └── references     <-- 7518 test data
        |   ├── coco_evals.py 
        |   ├── coco_utils.py
